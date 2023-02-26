@@ -5,9 +5,16 @@
 
 using namespace std;
 
-int main()
+int main(void)
 {
-	KGPL::Window window(500, 500, "h");
-	cout << window.getTitle();
+	KGPL::Window window({
+		600, 400, "example", 4, 5
+	});
+
+	while (!window.shouldClose()) {
+		glfwSwapBuffers(window.getGLFWwindow());
+		glfwPollEvents();
+	}
+
 	return 0;
 }

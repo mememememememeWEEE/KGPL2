@@ -3,13 +3,19 @@
 #
 cmake_minimum_required (VERSION 3.8)
 
-project ("KGPL")
+project ("example")
 
-# Add source to this project's executable.
-add_executable (KGPL "example.cpp" "src/KGPL.h" "src/KGPL_window.h" "src/KGPL_window.cpp")
+add_subdirectory ("ext/glfw")
+add_subdirectory ("src/")
+
+find_package (OpenGL REQUIRED)
+
+add_executable (example "example.cpp")
+
+target_link_libraries (example glfw)
+target_link_libraries (example KGPL)
+target_link_libraries (example ${OPENGL_gl_LIBRARY})
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET KGPL PROPERTY CXX_STANDARD 20)
+  set_property(TARGET example PROPERTY CXX_STANDARD 20)
 endif()
-
-# TODO: Add tests and install targets if needed.
