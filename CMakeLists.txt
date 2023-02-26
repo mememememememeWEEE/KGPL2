@@ -7,6 +7,7 @@ project ("example")
 
 add_subdirectory ("ext/glfw")
 add_subdirectory ("ext/glm")
+add_subdirectory ("ext/glew/build/cmake")
 add_subdirectory ("src/")
 
 find_package (OpenGL REQUIRED)
