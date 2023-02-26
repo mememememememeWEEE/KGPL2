@@ -8,7 +8,8 @@ using namespace std;
 int main(void)
 {
 	KGPL::Window window({
-		600, 400, "example", 4, 5
+		600, 400, "example",
+		4, 5
 	});
 
 	while (!window.shouldClose()) {

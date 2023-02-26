@@ -3,12 +3,12 @@
 
 namespace KGPL {
 	struct WindowConfig final {
-		uint32_t width = 600;
-		uint32_t height = 400;
+		int width = 600;
+		int height = 400;
 		std::string title = "KGPL";
 
-		uint32_t opengl_major = 3;
-		uint32_t opengl_minor = 0;
+		int opengl_major = 3;
+		int opengl_minor = 0;
 	};
 
 	class Window final {
