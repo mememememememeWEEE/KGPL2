@@ -9,4 +9,5 @@ add_library (KGPL
 	"KGPL_window.cpp"
 
 	"KGPL_event.h" 
- "KGPL_application.h")
+	"KGPL_application.h"
+)
