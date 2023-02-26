@@ -7,15 +7,18 @@ project ("example")
 
 add_subdirectory ("ext/glfw")
 add_subdirectory ("ext/glm")
-add_subdirectory ("ext/glew/build/cmake")
 add_subdirectory ("src/")
 
 find_package (OpenGL REQUIRED)
 
 add_executable (example "example.cpp")
 
+set (GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
+set (GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+set (GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+
 target_link_libraries (example glfw)
-target_link_libraries (example glm)
+target_link_libraries (example glm::glm)
 target_link_libraries (example KGPL)
 target_link_libraries (example ${OPENGL_gl_LIBRARY})
 

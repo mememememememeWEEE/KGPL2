@@ -10,6 +10,7 @@
 
 #include "KGPL_window.h"
 #include "KGPL_event.h"
+#include "KGPL_application.h"
 
 #define LOG(...) printf(__VA_ARGS__)
 
